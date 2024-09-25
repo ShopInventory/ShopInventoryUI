@@ -1,0 +1,41 @@
+<!-- <p>nav-item works!</p> -->
+
+<mat-expansion-panel
+  (opened)="(panelOpenState == true)"
+  (closed)="(panelOpenState == false)"
+  class="mb-2"
+  #expansionPanel
+  [hideToggle]="!isExpanded"
+>
+  <mat-expansion-panel-header>
+    <mat-panel-title
+      [matTooltip]="isExpanded ? '' : item.navCap"
+      [matTooltipPosition]="'right'"
+      [matTooltipClass]="'custom-tooltip'"
+    >
+      <i class="{{ item.navIcon }}"></i>
+      <span
+        [ngClass]="{ 'hide-menu': !isExpanded }"
+        class="ps-2"
+        *ngIf="isExpanded"
+        >{{ item.navCap }}</span
+      >
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <a
+    mat-list-item
+    (click)="onItemSelected(item)"
+    *ngFor="let item of item.children"
+    [matTooltipPosition]="'right'"
+    [matTooltip]="isExpanded ? '' : item.displayName"
+    [matTooltipClass]="'custom-tooltip'"
+  >
+    <i class="{{ item.iconName }}"></i>
+    <span
+      [ngClass]="{ 'hide-menu': !isExpanded }"
+      class="ps-2"
+      *ngIf="isExpanded"
+      >{{ item.displayName }}</span
+    >
+  </a>
+</mat-expansion-panel>

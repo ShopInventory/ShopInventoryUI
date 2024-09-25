@@ -1,0 +1,130 @@
+<mat-card class="cardWithShadow theme-card">
+  <div class="bg-light-primary px-4 py-4">
+    <div class="row d-flex align-items-center justify-content-between">
+      <div class="col-sm-8">
+        <h4 class="page-title m-0 f-s-20 f-w-600 m-b-16">Products</h4>
+        <h6 class="page-title m-0 f-s-20 f-w-600 m-b-16">Manage your products</h6>
+      </div>
+      <div class="col-sm-4">
+        <div class="breadcrumb-icon">
+          <img src="/assets/images/ChatBc.png" alt="breadcrumb" width="70">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="product-table-container px-3">
+    <div class="d-flex align-items-center justify-content-end my-3">
+      <button mat-raised-button color="primary" (click)="addProduct('add-product')">Add Product</button>
+      <button mat-flat-button color="primary" class="ms-2" (click)="openSuccessDialog()">
+        Open Successful Dialog
+      </button>
+    </div>
+    <div class="common-custom-expansion my-3">
+      <!-- ------------------------------------------------------------------------- -->
+      <!-- Product Table Container -->
+      <!-- ------------------------------------------------------------------------- -->
+      <div class="">
+        <!-- <pre>New Product Categories Data: {{productCategoriesData | json}}</pre> -->
+
+        <table mat-table [dataSource]="productCategoriesDataSource" class="" matSort matSortDirection="desc"
+          mat-table-auto-rows>
+          <!-- Number Column -->
+          <ng-container matColumnDef="srNo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Sr. No.</th>
+            <td mat-cell *matCellDef="let row;let i = index">
+              <p class="m-0">{{i + 1}}</p>
+            </td>
+          </ng-container>
+
+          <!-- Title Column -->
+          <ng-container matColumnDef="productName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Product</th>
+            <td mat-cell *matCellDef="let row">
+              <p class="m-0">{{row.productName}}</p>
+            </td>
+          </ng-container>
+
+          <!-- State Column -->
+          <ng-container matColumnDef="productType">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Product Type</th>
+            <td mat-cell *matCellDef="let row">
+              <p class="m-0">{{row.productTypeName}}</p>
+            </td>
+          </ng-container>
+
+          <!-- State Column -->
+          <ng-container matColumnDef="productCategory">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Category</th>
+            <td mat-cell *matCellDef="let row">
+              <p class="m-0">{{row.productCategoryName}}</p>
+            </td>
+          </ng-container>
+
+          <!-- State Column -->
+          <ng-container matColumnDef="productSubCategory">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Sub Category</th>
+            <td mat-cell *matCellDef="let row">
+              <p class="m-0">{{row.productSubCategoryName}}</p>
+            </td>
+          </ng-container>
+
+          <!-- State Column -->
+          <ng-container matColumnDef="productBrand">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Brand</th>
+            <td mat-cell *matCellDef="let row">
+              <p class="m-0">{{row.productBrandName}}</p>
+            </td>
+          </ng-container>
+
+          <!-- State Column -->
+          <ng-container matColumnDef="productUnit">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Unit</th>
+            <td mat-cell *matCellDef="let row">
+              <p class="m-0">{{row.productUnitName}}</p>
+            </td>
+          </ng-container>
+
+          <!-- State Column -->
+          <ng-container matColumnDef="productQty">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Quantity</th>
+            <td mat-cell *matCellDef="let row">
+              <p class="m-0">{{row.productQty}}</p>
+            </td>
+          </ng-container>
+
+          <!-- Created Column -->
+          <ng-container matColumnDef="created">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header mat-sort-header>
+              Created
+            </th>
+            <td mat-cell *matCellDef="let row">
+              <p class="m-0">{{row.productCreateDate | date}}</p>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="sticky-action-column">Action</th>
+            <td mat-cell *matCellDef="let row;let i = index">
+              <!-- [hidden]="row.allowanceId === 100 || row.allowanceName === 'Gross Earning'" -->
+              <img src="./assets/icons/dwnld_icons/icon_edit.svg" alt="edit-icon" class="action-icon">
+              <img src="./assets/icons/dwnld_icons/icon_delete.svg" alt="delete-icon" class="action-icon ms-2">
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="productCategoriesDisplayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: productCategoriesDisplayedColumns;"></tr>
+
+          <!-- Row shown when there is no matching data. -->
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">No data matching the filter</td>
+          </tr>
+        </table>
+      </div>
+      <!-- ------------------------------------------------------------------------- -->
+      <!-- Mat paginator -->
+      <!-- ------------------------------------------------------------------------- -->
+      <mat-paginator [length]="100" [pageSize]="5" [pageSizeOptions]="[5,15,25,50,100]"></mat-paginator>
+    </div>
+  </div>
+</mat-card>

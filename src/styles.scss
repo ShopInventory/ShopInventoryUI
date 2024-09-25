@@ -1,0 +1,619 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$inventory-mgmt-app-v16-primary: mat.define-palette(mat.$indigo-palette);
+$inventory-mgmt-app-v16-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$inventory-mgmt-app-v16-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$inventory-mgmt-app-v16-theme: mat.define-light-theme((color: (primary: $inventory-mgmt-app-v16-primary,
+        accent: $inventory-mgmt-app-v16-accent,
+        warn: $inventory-mgmt-app-v16-warn,
+      )));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($inventory-mgmt-app-v16-theme);
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+// Plus imports for other components in your app.
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// @deprecated renamed to $dark-primary-text.
+// @breaking-change 8.0.0
+$black-87-opacity: rgba(black, 0.87);
+// @deprecated renamed to $light-primary-text.
+// @breaking-change 8.0.0
+$white-87-opacity: rgba(white, 0.87);
+// @deprecated use $dark-[secondary-text,disabled-text,dividers,focused] instead.
+// @breaking-change 8.0.0
+$black-12-opacity: rgba(black, 0.12);
+// @deprecated use $light-[secondary-text,disabled-text,dividers,focused] instead.
+// @breaking-change 8.0.0
+$white-12-opacity: rgba(white, 0.12);
+// @deprecated use $dark-[secondary-text,disabled-text,dividers,focused] instead.
+// @breaking-change 8.0.0
+$black-6-opacity: rgba(black, 0.06);
+// @deprecated use $light-[secondary-text,disabled-text,dividers,focused] instead.
+// @breaking-change 8.0.0
+$white-6-opacity: rgba(white, 0.06);
+
+$mat-primary: (
+  100: white,
+  500: #5d87ff,
+  700: #5d87ff,
+  contrast: (100: white,
+    500: white,
+    700: white,
+  ),
+);
+
+$mat-secondary: (
+  100: #ffffff,
+  500: #44b7f7,
+  700: #5d87ff,
+  contrast: (100: white,
+    500: white,
+    700: white,
+  ),
+);
+
+$mat-warn: (
+  100: FDEDE8,
+  500: #fa896b,
+  700: #f3704d,
+  contrast: (100: white,
+    500: white,
+    700: white,
+  ),
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+// $inventory-mgmt-app-primary: mat.define-palette(mat.$indigo-palette);
+// $theme-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+$theme-primary: mat.define-palette($mat-primary, 500);
+$theme-accent: mat.define-palette($mat-secondary, 500);
+
+// The warn palette is optional (defaults to red).
+// $theme-warn: mat.define-palette(mat.$red-palette);
+$theme-warn: mat.define-palette($mat-warn, 500);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+// $bluetheme: mat.define-light-theme((
+//   color: (
+//     primary: $theme-primary,
+//     accent: $theme-accent,
+//     warn: $theme-warn,
+//   )
+// ));
+
+$bluetheme: mat.define-light-theme((color: (primary: $theme-primary,
+        accent: $theme-accent,
+        warn: $theme-warn,
+      ),
+      typography: mat.define-typography-config($font-family: "Plus Jakarta Sans",
+        $subtitle-2: mat.define-typography-level(14px, 14px, 400),
+        $subtitle-1: mat.define-typography-level(21px, 26px, 500),
+        $headline-6: mat.define-typography-level(18px, 26px, 600),
+        $headline-5: mat.define-typography-level(24px, 30px, 700),
+        $button: mat.define-typography-level(14px, 14px, 400),
+        $body-1: mat.define-typography-level(14px, 20px, 400),
+        $body-2: mat.define-typography-level(16px, 22px, 400),
+      ),
+    ));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($bluetheme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Jakarta';
+}
+
+@font-face {
+  font-family: 'Jakarta';
+  src: url(../src/assets/fonts/PlusJakartaSans-VariableFont_wght.ttf);
+}
+
+
+:root {
+  --primary: #2A6DD9;
+  --secondary: #5D62D8;
+  --tertiary: #7CACF8;
+  --pending: #FFEA4D;
+  --success: #09930F;
+  --warn: #C61313;
+  --accent: #49beff;
+
+
+  // custom
+  --accent: #49beff;
+  --disable: #BABDC3;
+  --toolbar: white;
+  --white: #ffffff;
+
+  font-family: 'Poppins-r';
+
+  // gradient var
+  --megentagradient: linear-gradient(-154deg, #96FFFA, #2FAAA5, #027670);
+
+  --header-height: 70px;
+
+  // cards
+  --cardbg: white;
+  --cardshadow: rgb(145 158 171 / 30%) 0px 0px 2px 0px, rgb(145 158 171 / 12%) 0px 12px 24px -4px;
+  --border-radius: 7px;
+
+  // text color
+  --textPrimary: #2a3547;
+}
+
+
+
+
+/* -----------------------
+---font family class---
+----------------------- */
+
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap");
+
+// font
+$font-family: 'Plus-Jakarta-Sans', sans-serif;
+
+// light color variable
+$sidebarbg: white;
+$background: white;
+$cardbg: white;
+$toolbar: white;
+$cardshadow: rgb(145 158 171 / 30%) 0px 0px 2px 0px, rgb(145 158 171 / 12%) 0px 12px 24px -4px;
+$hoverBgColor: #f6f9fc;
+
+// Dark color variable
+$darksidebarbg: #2a3447;
+$darkbackground: #2a3447;
+$darkcardbg: #2a3447;
+$darktoolbar: #2a3447;
+$darkcardshadow: rgba(145, 158, 171, 0.3) 0px 0px 2px 0px, rgba(145, 158, 171, 0.02) 0px 12px 24px -4px;
+$darkborderColor: #333f55;
+$darkformborderColor: #465670;
+$darkhoverbgcolor: #333f55;
+$darkthemelightprimary: #253662;
+$darkthemelightaccent: #1C455D;
+$darkthemelightwarning: #4D3A2A;
+$darkthemelighterror: #4B313D;
+$darkthemelightsuccess: #1B3C48;
+
+// Sidenav
+$sidenav-desktop: 270px !default;
+$sidenav-mini: 80px !default;
+$header-height: 70px !default;
+
+
+//BorderColor
+$borderColor: #e5eaef;
+$borderformColor: #dfe5ef;
+
+// custom
+$primary: #5d87ff;
+$accent: #49beff;
+$warning: #ffae1f;
+$error: #fa896b;
+$success: #13deb9;
+$white: #ffffff;
+$bodytext-color: #414141;
+
+$success-subtle: #d1e7dd;
+$danger-subtle: #fdede8;
+$confirm-subtle: #e1e8f8;
+
+$light: #f2f6fa;
+
+$gray-100: #7c8fac;
+
+$light-primary: #ecf2ff;
+$light-accent: #e8f7ff;
+$light-warning: #fef5e5;
+$light-error: #fdede8;
+$light-success: #e6fffa;
+
+// layout
+$boxedWidth: 1200px;
+
+$border-radius: 7px;
+
+// text color
+$textPrimary: #2a3547;
+
+/* -----------------------
+---color style class---
+----------------------- */
+
+
+.bg-primary {
+  background: mat.get-color-from-palette($theme-primary, 500) !important;
+}
+
+.bg-light-primary {
+  background-color: #ecf2ff !important;
+}
+
+.bg-light-accent {
+  background-color: #e8f7ff !important;
+}
+
+.bg-light-warning {
+  background-color: #fef5e5 !important;
+}
+
+.bg-light-success {
+  background-color: #e6fffa !important;
+}
+
+.bg-light-error {
+  background-color: #fdede8 !important;
+}
+
+
+
+.mainWrapper {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  flex: 1;
+  height: 100%;
+}
+
+.pageWrapper {
+  padding: 12px;
+  min-height: calc(100vh - 70px);
+  margin: 0 auto;
+  // max-width: $boxedWidth;
+  background-color: white;
+}
+
+// .sidebarNav {
+//   // width: 100%;
+//   flex-shrink: 0;
+//   transition: swift-ease-out(width);
+//   position: absolute;
+//   overflow-x: hidden;
+// }
+
+.flex-1-auto {
+  flex: 1 1 0%;
+}
+
+
+/* -----------------------
+---mat-card style class---
+----------------------- */
+
+
+
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background-color: #6b6969;
+}
+
+::-webkit-scrollbar-track:vertical {
+  background: #E4EAF2;
+  border-left: 9px solid white;
+  border-right: 9px solid white;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  background: #B6C8DE;
+  border-left: 8px solid white;
+  border-right: 8px solid white;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-track:horizontal {
+  background: #E4EAF2;
+  border-top: 9px solid white;
+  border-bottom: 9px solid white;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background: #B6C8DE;
+  border-top: 8px solid white;
+  border-bottom: 8px solid white;
+  border-radius: 8px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+.mdc-text-field--outlined {
+
+  .mdc-notched-outline__leading,
+  .mdc-notched-outline__trailing,
+  .mdc-notched-outline__notch {
+    border-color: $borderColor !important;
+  }
+
+  .mdc-notched-outline .mdc-notched-outline__leading {
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+  }
+
+  .mdc-notched-outline .mdc-notched-outline__trailing {
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+  }
+}
+
+.mdc-form-field>label {
+  font-size: 14px;
+}
+
+.hide-hint {
+  .mat-mdc-form-field-subscript-wrapper {
+    display: none;
+  }
+}
+
+/* ----------------------------------------------
+---common custom accordian -- expansion panels---
+---------------------------------------------- */
+
+.common-custom-expansion {
+  .mat-expansion-panel:not([class*="mat-elevation-z"]) {
+    box-shadow: none !important;
+    margin-bottom: 10px;
+  }
+
+  .mat-expansion-panel-header,
+  .mat-expanded {
+    background: #f0f0f0 !important;
+  }
+
+  .mat-expansion-panel:hover {
+    background: #f0f0f0;
+  }
+
+  .mat-expansion-panel-body {
+    background-color: #fff;
+    padding: 10px 10px;
+  }
+
+
+
+  .mat-expansion-panel-header.mat-expanded {
+    height: 40px;
+  }
+
+  .mat-expansion-panel {
+    &:not(.mat-expanded) {
+      border: none;
+    }
+
+    border: 1px solid #D0D9E5;
+  }
+}
+
+/* ----------------------------------------------
+-----------Mat Table Class---------------------
+---------------------------------------------- */
+
+.mat-mdc-header-cell {
+  border-bottom: 1px solid #5a9cff !important;
+  font-weight: 600 !important;
+  color: #414141;
+  background-color: #eef5ff !important;
+}
+
+.mat-footer-cell {
+  font-size: 1.4rem;
+  font-weight: 600 !important;
+  color: #414141;
+  font-family: "Poppins-m";
+}
+
+.mat-mdc-header-cell,
+.mat-mdc-cell,
+.mat-mdc-footer-cell {
+  font-size: .8rem;
+
+  padding: 8px 10px !important;
+}
+
+.mat-sort-header-content {
+  text-align: left !important;
+}
+
+.action-icon {
+  width: 30px !important;
+}
+
+.cursor-not-allowed {
+  cursor: not-allowed !important;
+}
+
+// @media screen and (max-width:991px) {
+//   .mat-mdc-header-cell,
+// .mat-cell,
+// .mat-footer-cell {
+//   padding: 5px 7px !important;
+// }
+// }
+
+/* ----------------------------------------------
+--Mat Table Last Column (Action) Sticky Class----
+---------------------------------------------- */
+
+@media screen and (min-width:576px) {
+  .sticky-column-condition {
+    position: sticky;
+    right: -2px;
+    text-align: center !important;
+  }
+
+  td:last-child:not(.mat-calendar-body-cell-container):has(img, a, button) {
+    @extend .sticky-column-condition;
+    background-color: #fff;
+    box-shadow: 21px 0 7px -24px inset;
+    cursor: pointer;
+  }
+
+  th.sticky-action-column {
+    @extend .sticky-column-condition;
+  }
+
+}
+
+.action-icon {
+  width: 30px !important;
+
+}
+
+
+/* ----------------------------------------------
+-----------Mat Dialog Class---------------------
+---------------------------------------------- */
+.small-dialog {
+  width: 40%;
+}
+
+.medium-dialog {
+  width: 55%;
+}
+
+.large-dialog {
+  width: 70%;
+}
+
+@media screen and (min-width:991px) and (max-width:1400px) {
+
+  .small-dialog,
+  .medium-dialog,
+  .large-dialog {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width:991px) {
+
+  .small-dialog,
+  .medium-dialog,
+  .large-dialog {
+    width: 100%;
+  }
+}
+
+.failed_img {
+  width: 130px;
+}
+
+
+/* ----------------------------------------------y
+---File Browser---
+---------------------------------------------- */
+
+// .file-uploader-container {
+//   .upload-lable-text {
+//     width: 240px;
+//     height: 123px;
+//     background-color: #2A6DD90F;
+//     border: 1px dashed #006FE1;
+//   }
+// }
+
+.file-uploader-container {
+  padding: 5px;
+  /* Add some padding around the container */
+
+  .upload-lable-text {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    background-color: #2A6DD90F;
+    border: 1px dashed #006FE1;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  i {
+    // font-size: 24px;
+    color: #006FE1;
+  }
+
+  label {
+    margin-top: 8px;
+    color: #006FE1;
+    font-size: 14px;
+  }
+
+  .image-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .upload-lable-text .delete-icon {
+    position: absolute;
+    top: -7px;
+    right: -2px;
+    color: #006FE1;
+    cursor: pointer;
+    font-size: 18px;
+  }
+}
+
+
+.mat-mdc-dialog-container {
+  padding: 18px !important;
+  .mdc-dialog__surface {
+    padding: 15px !important;
+
+  }
+}
+
+// .row {
+//   --bs-gutter-x: 1.5rem;
+//   --bs-gutter-y: -1rem;
+// }

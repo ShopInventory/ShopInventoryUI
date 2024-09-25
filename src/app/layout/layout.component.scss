@@ -1,0 +1,20 @@
+.contentWrapper {
+  // display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+}
+
+// .sm-sidebar{
+  // .sidebarNav {
+  //   width: 100px !important;
+  // }
+// }
+
+.pageWrapper {
+  padding: 24px;
+  min-height: calc(100vh - 70px);
+  margin: 0 auto;
+  max-width: 1600px;
+}

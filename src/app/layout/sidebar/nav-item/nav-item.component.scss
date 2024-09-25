@@ -1,0 +1,61 @@
+::ng-deep .custom-tooltip {
+  .mdc-tooltip__surface {
+    margin-left: px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border: 1px solid #cddaff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 1px 0px 20px #cddaff;
+  }
+}
+
+.nav-caption {
+  color: #333;
+  /* Dark text color */
+  padding: 1px 8px;
+  /* Add some padding */
+  font-weight: 600;
+  /* Make the text bold */
+}
+
+
+.menu-list-item {
+  border-radius: 7px;
+  // height: 45px;
+  // padding: 8px 10px!important;
+  margin-bottom: 2px
+}
+
+.mat-expansion-panel {
+  margin-top: 3px !important;
+}
+
+.mat-expansion-panel:not([class*=mat-elevation-z]) {
+  box-shadow: none !important;
+}
+
+// ::ng-deep .mat-expansion-indicator::after {
+//   display: none !important;
+// }
+
+// ::ng-deep .mat-expansion-panel-content {
+//   display: none !important;
+// }
+
+::ng-deep .hide-menu {
+  display: none !important;
+  .mat-expansion-panel-content {
+    display: none !important;
+  }
+}
+/* Define a class for hiding the expansion indicator */
+.hide-indicator {
+  ::ng-deep .mat-expansion-indicator::after {
+    display: none !important;
+  }
+}
+
+// .hide-toggle .mat-expansion-indicator { display: none !important; }

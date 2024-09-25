@@ -1,0 +1,17 @@
+<div class="custom-sidebar">
+  <div class="flex-layout">
+    <div class="branding d-flex align-items-center">
+      <a href="/">
+        <img src="./assets/logos/M.png" width="30px" height="30px" alt="logo" class="align-middle m-2" />
+      </a>
+      <!-- <span *ngIf="isExpanded || isShowing" class="text-uppercase f-s-16 f-w-900 text-primary ps-2 pe-3">Mohit Electricals</span> -->
+      <span *ngIf="isExpanded" class="text-uppercase f-s-16 f-w-900 text-primary ps-2 pe-3">Mohit Electricals</span>
+    </div>
+    <mat-nav-list class="sidebar-list">
+      <mat-accordion>
+        <app-nav-item *ngFor="let item of navItems" [item]="item" [isExpanded]="isExpanded"
+          (click)="menuClick()"></app-nav-item>
+      </mat-accordion>
+    </mat-nav-list>
+  </div>
+</div>
