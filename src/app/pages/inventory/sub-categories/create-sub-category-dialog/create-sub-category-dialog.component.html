@@ -24,7 +24,7 @@
             </mat-panel-title>
           </mat-expansion-panel-header>
           <div class="row">
-            <div class="col-lg-6 col-xl-6">
+            <div class="col-lg-6 col-xl-6 mb-2">
               <mat-form-field appearance="outline"  class="w-100" color="primary">
                 <mat-label>Parent Category</mat-label>
                 <mat-select formControlName="categoryId">
@@ -36,14 +36,14 @@
               </mat-form-field>
             </div>
 
-            <div class="col-lg-6 col-xl-6">
+            <div class="col-lg-6 col-xl-6 mb-2">
               <mat-form-field appearance="outline" class="w-100" color="primary">
                 <mat-label>Sub Category Name</mat-label>
                 <input matInput formControlName="subCategoryName">
               </mat-form-field>
             </div>
 
-            <div class="col-lg-6 col-xl-6">
+            <div class="col-lg-6 col-xl-6 mb-2">
               <mat-form-field appearance="outline" class="w-100" color="primary">
                 <mat-label>Date</mat-label>
                 <input matInput [matDatepicker]="picker" (focus)="picker.open()" readonly
@@ -52,7 +52,7 @@
               <mat-datepicker #picker></mat-datepicker>
             </div>
 
-            <div class="col-lg-6 col-xl-6">
+            <div class="col-lg-6 col-xl-6 mb-2">
               <mat-form-field appearance="outline" class="w-100" color="primary">
                 <mat-label>Sub Category Status</mat-label>
                 <mat-select formControlName="subCategoryStatus">
@@ -73,7 +73,7 @@
                 </mat-form-field>
               </div>
             </div> -->
-            <div class="col-lg-6 col-xl-6">
+            <div class="col-lg-6 col-xl-6 mb-2">
               <div class="category-code-mat-form-field">
                 <mat-form-field appearance="outline" class="w-100 rounded-end-0 relative-field" color="primary">
                   <mat-label>Sub Category Code</mat-label>

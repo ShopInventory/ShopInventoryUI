@@ -1,144 +1,97 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
-// Plus imports for other components in your app.
 
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
-@include mat.core();
-
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$inventory-mgmt-app-v16-primary: mat.define-palette(mat.$indigo-palette);
-$inventory-mgmt-app-v16-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
-
-// The warn palette is optional (defaults to red).
-$inventory-mgmt-app-v16-warn: mat.define-palette(mat.$red-palette);
-
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
-$inventory-mgmt-app-v16-theme: mat.define-light-theme((color: (primary: $inventory-mgmt-app-v16-primary,
-        accent: $inventory-mgmt-app-v16-accent,
-        warn: $inventory-mgmt-app-v16-warn,
-      )));
-
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-@include mat.all-component-themes($inventory-mgmt-app-v16-theme);
-
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
 // Plus imports for other components in your app.
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 
-// @deprecated renamed to $dark-primary-text.
-// @breaking-change 8.0.0
-$black-87-opacity: rgba(black, 0.87);
-// @deprecated renamed to $light-primary-text.
-// @breaking-change 8.0.0
-$white-87-opacity: rgba(white, 0.87);
-// @deprecated use $dark-[secondary-text,disabled-text,dividers,focused] instead.
-// @breaking-change 8.0.0
-$black-12-opacity: rgba(black, 0.12);
-// @deprecated use $light-[secondary-text,disabled-text,dividers,focused] instead.
-// @breaking-change 8.0.0
-$white-12-opacity: rgba(white, 0.12);
-// @deprecated use $dark-[secondary-text,disabled-text,dividers,focused] instead.
-// @breaking-change 8.0.0
+// Define opacity values for text
+$black-87-opacity: rgba(black, 0.87); // Used for dark primary text
+$white-87-opacity: rgba(white, 0.87); // Used for light primary text
+$black-12-opacity: rgba(black, 0.12); // Used for dark secondary text, disabled text, etc.
+$white-12-opacity: rgba(white, 0.12); // Used for light secondary text, disabled text, etc.
 $black-6-opacity: rgba(black, 0.06);
-// @deprecated use $light-[secondary-text,disabled-text,dividers,focused] instead.
-// @breaking-change 8.0.0
 $white-6-opacity: rgba(white, 0.06);
 
+// Primary, Secondary, and Warn colors for theming
 $mat-primary: (
   100: white,
   500: #5d87ff,
   700: #5d87ff,
-  contrast: (100: white,
+  contrast: (
+    100: white,
     500: white,
     700: white,
-  ),
+  )
 );
 
 $mat-secondary: (
   100: #ffffff,
   500: #44b7f7,
   700: #5d87ff,
-  contrast: (100: white,
+  contrast: (
+    100: white,
     500: white,
     700: white,
-  ),
+  )
 );
 
 $mat-warn: (
-  100: FDEDE8,
+  100: #fdeee8,
   500: #fa896b,
   700: #f3704d,
-  contrast: (100: white,
+  contrast: (
+    100: white,
     500: white,
     700: white,
-  ),
+  )
 );
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-// $inventory-mgmt-app-primary: mat.define-palette(mat.$indigo-palette);
-// $theme-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+// Define the theme palettes
+$inventory-mgmt-app-v16-theme-primary: mat.define-palette($mat-primary, 500);
+$inventory-mgmt-app-v16-theme-accent: mat.define-palette($mat-secondary, 500);
+$inventory-mgmt-app-v16-theme-warn: mat.define-palette($mat-warn, 500);
 
-$theme-primary: mat.define-palette($mat-primary, 500);
-$theme-accent: mat.define-palette($mat-secondary, 500);
+// Create a light theme configuration with color and typography
+$inventory-mgmt-app-v16-blue-theme: mat.define-light-theme((
+  color: (
+    primary: $inventory-mgmt-app-v16-theme-primary,
+    accent: $inventory-mgmt-app-v16-theme-accent,
+    warn: $inventory-mgmt-app-v16-theme-warn
+  ),
+  typography: mat.define-typography-config(
+    $font-family: "Plus Jakarta Sans",
+    $subtitle-2: mat.define-typography-level(14px, 14px, 400),
+    $subtitle-1: mat.define-typography-level(21px, 26px, 500),
+    $headline-6: mat.define-typography-level(18px, 26px, 600),
+    $headline-5: mat.define-typography-level(24px, 30px, 700),
+    $button: mat.define-typography-level(14px, 14px, 400),
+    $body-1: mat.define-typography-level(14px, 20px, 400),
+    $body-2: mat.define-typography-level(16px, 22px, 400)
+  )
+));
 
-// The warn palette is optional (defaults to red).
-// $theme-warn: mat.define-palette(mat.$red-palette);
-$theme-warn: mat.define-palette($mat-warn, 500);
+// Define a compact theme
+$compact-theme: mat.define-light-theme((density: -4));
 
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
-// $bluetheme: mat.define-light-theme((
-//   color: (
-//     primary: $theme-primary,
-//     accent: $theme-accent,
-//     warn: $theme-warn,
-//   )
-// ));
+// Include Angular Material core theme and form-field density mixin
+@include mat.all-component-themes($inventory-mgmt-app-v16-blue-theme);
+@include mat.form-field-density($compact-theme);
 
-$bluetheme: mat.define-light-theme((color: (primary: $theme-primary,
-        accent: $theme-accent,
-        warn: $theme-warn,
-      ),
-      typography: mat.define-typography-config($font-family: "Plus Jakarta Sans",
-        $subtitle-2: mat.define-typography-level(14px, 14px, 400),
-        $subtitle-1: mat.define-typography-level(21px, 26px, 500),
-        $headline-6: mat.define-typography-level(18px, 26px, 600),
-        $headline-5: mat.define-typography-level(24px, 30px, 700),
-        $button: mat.define-typography-level(14px, 14px, 400),
-        $body-1: mat.define-typography-level(14px, 20px, 400),
-        $body-2: mat.define-typography-level(16px, 22px, 400),
-      ),
-    ));
+/* Global styles and font setup */
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-@include mat.all-component-themes($bluetheme);
-
-/* You can add global styles to this file, and also import other style files */
-
-html,
-body {
-  height: 100%;
+html{
+  font-size: 62.5%;
 }
 
 body {
+  height: 100%;
   margin: 0;
   font-family: 'Jakarta';
+  font-size: 1.4rem;
 }
 
 @font-face {
@@ -146,7 +99,7 @@ body {
   src: url(../src/assets/fonts/PlusJakartaSans-VariableFont_wght.ttf);
 }
 
-
+// Root-level CSS variables
 :root {
   --primary: #2A6DD9;
   --secondary: #5D62D8;
@@ -156,31 +109,18 @@ body {
   --warn: #C61313;
   --accent: #49beff;
 
-
-  // custom
-  --accent: #49beff;
   --disable: #BABDC3;
   --toolbar: white;
   --white: #ffffff;
 
-  font-family: 'Poppins-r';
-
-  // gradient var
   --megentagradient: linear-gradient(-154deg, #96FFFA, #2FAAA5, #027670);
 
   --header-height: 70px;
-
-  // cards
   --cardbg: white;
   --cardshadow: rgb(145 158 171 / 30%) 0px 0px 2px 0px, rgb(145 158 171 / 12%) 0px 12px 24px -4px;
   --border-radius: 7px;
-
-  // text color
   --textPrimary: #2a3547;
 }
-
-
-
 
 /* -----------------------
 ---font family class---
@@ -261,7 +201,7 @@ $textPrimary: #2a3547;
 
 
 .bg-primary {
-  background: mat.get-color-from-palette($theme-primary, 500) !important;
+  background: mat.get-color-from-palette($inventory-mgmt-app-v16-theme-primary, 500) !important;
 }
 
 .bg-light-primary {
@@ -284,6 +224,26 @@ $textPrimary: #2a3547;
   background-color: #fdede8 !important;
 }
 
+.text-primary{
+  color: var(--primary);
+}
+
+
+.f-12{
+  font-size: 1.2rem;
+}
+
+.f-16{
+  font-size: 1.6rem;
+}
+
+.f-18{
+  font-size: 1.8rem;
+}
+
+.f-20{
+  font-size: 2rem;
+}
 
 
 .mainWrapper {
@@ -356,19 +316,7 @@ $textPrimary: #2a3547;
   border-radius: 8px;
 }
 
-html,
-body {
-  height: 100%;
-}
-
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
-
 .mdc-text-field--outlined {
-
   .mdc-notched-outline__leading,
   .mdc-notched-outline__trailing,
   .mdc-notched-outline__notch {
@@ -607,6 +555,7 @@ body {
 
 .mat-mdc-dialog-container {
   padding: 18px !important;
+
   .mdc-dialog__surface {
     padding: 15px !important;
 
@@ -617,3 +566,8 @@ body {
 //   --bs-gutter-x: 1.5rem;
 //   --bs-gutter-y: -1rem;
 // }
+
+.mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+  padding-top: 14px;
+
+}
