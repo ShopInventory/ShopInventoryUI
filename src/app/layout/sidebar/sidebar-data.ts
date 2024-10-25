@@ -146,7 +146,7 @@ export const navItems: NavItem[] = [
       {
         displayName: 'Logout',
         iconName: 'bi bi-box-arrow-right',
-        route: '/ui-components/tooltips',
+        route: '/authentication/login',
       },
     ]
   }

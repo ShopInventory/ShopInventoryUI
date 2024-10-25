@@ -13,6 +13,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { CommonDialogContentComponent } from './shared/shared-component/common-dialog-content/common-dialog-content.component';
 import { MaterialModule } from './shared/shared-module/material/material.module';
 import { LoaderComponent } from './shared/shared-component/loader/loader.component';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -34,6 +35,10 @@ import { LoaderComponent } from './shared/shared-component/loader/loader.compone
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'en-GB' },
+    {
+      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+      useValue:{ appearance: 'outline', subscriptSizing: 'dynamic'}
+    }
   ],
   bootstrap: [AppComponent]
 })

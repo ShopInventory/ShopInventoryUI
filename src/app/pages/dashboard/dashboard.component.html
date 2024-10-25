@@ -1,69 +1,79 @@
-<p>dashboard works!</p>
-<div class="row">
-  <!-- --------------------------------------------------------------------------- -->
-  <!-- Product Categories -->
-  <!-- --------------------------------------------------------------------------- -->
-  <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-4">
-    <mat-card class="cardWithShadow bg-light-primary p-2">
-      <mat-card-header class="d-flex align-items-center justify-content-between">
-        <mat-card-title class="f-s-18 f-w-500">Product Categories</mat-card-title>
-        <button mat-fab color="accent" class="shadow-none icon-48">
-          <!-- <img src="./assets/icons/total-products.png" alt="total-products-icon" class="action-icon"> -->
-          <i class='fs-3 bi bi-box'></i>
-        </button>
-      </mat-card-header>
-      <mat-card-content class="d-flex align-items-center mt-2">
-        <h4 class="mat-headline-5">40,000</h4>
-      </mat-card-content>
-    </mat-card>
+<div class="container">
+  <div class="row justify-content-start p-2">
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+      <mat-card class="rounded total-products-container p-2">
+        <div class="d-flex align-items-center justify-content-between p-3 pb-2">
+          <p class="m-0 fw-semibold opacity-75">Product Categories</p>
+          <span class="text-primary f-18"><i class="bi bi-box"></i></span>
+        </div>
+        <div class="d-flex flex-column align-items-start p-3 pt-1">
+          <h2 class="m-0 p-0 fw-bolder">40,560</h2>
+          <p class="m-0 mt-2 f-12 opacity-75 fw-semibold"><span class="text-primary">+ 20.10%</span> from last month</p>
+        </div>
+      </mat-card>
+    </div>
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+      <mat-card class="rounded total-stocks-container p-2">
+        <div class="d-flex align-items-center justify-content-between p-3 pb-2">
+          <p class="m-0 fs-6 fw-semibold opacity-75">Total Stocks</p>
+          <span class="border rounded-circle px-2 py-1"><img src="/assets/icons/stocks.svg" alt="Stocks" width="20"></span>
+        </div>
+        <div class="d-flex flex-column align-items-start p-3 pt-1">
+          <h3 class="m-0 p-0 fw-bolder">40,560</h3>
+          <p class="m-0 p-0 fw-lighter">+ 20.10% from last month</p>
+        </div>
+      </mat-card>
+    </div>
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+      <mat-card class="rounded total-sales-container p-2">
+        <div class="d-flex align-items-center justify-content-between p-3 pb-2">
+          <p class="m-0 fs-6 fw-semibold opacity-75">Total Sales</p>
+          <span class="border rounded-circle px-2 py-1"><img src="/assets/icons/wallet.svg" alt="Sales" width="20"></span>
+        </div>
+        <div class="d-flex flex-column align-items-start p-3 pt-1">
+          <h3 class="m-0 p-0 fw-bolder">₹ 40,560</h3>
+          <p class="m-0 p-0 fw-lighter">+ 20.10% from last month</p>
+        </div>
+      </mat-card>
+    </div>
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+      <mat-card class="rounded total-profit-container p-2">
+        <div class="d-flex align-items-center justify-content-between p-3 pb-2">
+          <p class="m-0 fs-6 fw-semibold opacity-75">Total Profit</p>
+          <span class="border rounded-circle px-2 py-1"><img src="/assets/icons/currency-rupee.svg" alt="Profit" width="20"></span>
+        </div>
+        <div class="d-flex flex-column align-items-start p-3 pt-1">
+          <h3 class="m-0 p-0 fw-bolder">₹ 40,560</h3>
+          <p class="m-0 p-0 fw-lighter">+ 20.10% from last month</p>
+        </div>
+      </mat-card>
+    </div>
   </div>
-  <!-- --------------------------------------------------------------------------- -->
-  <!-- Total Stocks -->
-  <!-- --------------------------------------------------------------------------- -->
-  <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-4">
-    <mat-card class="cardWithShadow bg-light-warning p-2">
-      <mat-card-header class="d-flex align-items-center justify-content-between">
-        <mat-card-title class="f-s-18 f-w-500">Total Stocks</mat-card-title>
-        <button mat-fab color="accent" class="shadow-none icon-48">
-          <img src="./assets/icons/total-stocks.png" alt="total-stocks-icon" class="action-icon">
-        </button>
-      </mat-card-header>
-      <mat-card-content class="d-flex align-items-center mt-2">
-        <h4 class="mat-headline-5">40,000</h4>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <!-- --------------------------------------------------------------------------- -->
-  <!-- Total Sales -->
-  <!-- --------------------------------------------------------------------------- -->
-  <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-4">
-    <mat-card class="cardWithShadow bg-light-accent p-2">
-      <mat-card-header class="d-flex align-items-center justify-content-between">
-        <mat-card-title class="f-s-18 f-w-500">Total Sales</mat-card-title>
-        <button mat-fab color="accent" class="shadow-none icon-48">
-          <img src="./assets/icons/total-sales.png" alt="total-sales-icon" class="action-icon">
-        </button>
-      </mat-card-header>
-      <mat-card-content class="d-flex align-items-center mt-2">
-        <h4 class="mat-headline-5">40,000</h4>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <!-- --------------------------------------------------------------------------- -->
-  <!-- Total Profit -->
-  <!-- --------------------------------------------------------------------------- -->
-  <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-4">
-    <mat-card class="cardWithShadow bg-light-success p-2">
-      <mat-card-header class="d-flex align-items-center justify-content-between">
-        <mat-card-title class="f-s-18 f-w-500">Total Profit</mat-card-title>
-        <button mat-fab color="accent" class="shadow-none icon-40">
-          <img src="./assets/icons/profit-icon.png" alt="profit-icon" class="action-icon">
-        </button>
-      </mat-card-header>
-      <mat-card-content class="d-flex align-items-center mt-2">
-        <h4 class="mat-headline-5">36,358</h4>
-      </mat-card-content>
-    </mat-card>
+
+  <div class="row justify-content-start p-2">
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+      <mat-card class="rounded total-products-container p-2">
+        <div class="d-flex align-items-center justify-content-between p-3 pb-2">
+          <p class="m-0 fs-6 fw-semibold opacity-75">Product Categories</p>
+          <span class="border rounded-circle px-2 py-1"><img src="/assets/icons/box.svg" alt="Product" width="20"></span>
+        </div>
+        <div class="d-flex flex-column align-items-start p-3 pt-1">
+          <h3 class="m-0 p-0 fw-bolder">40,560</h3>
+          <p class="m-0 p-0 fw-lighter">+ 20.10% from last month</p>
+        </div>
+      </mat-card>
+    </div>
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+      <mat-card class="rounded total-stocks-container p-2">
+        <div class="d-flex align-items-center justify-content-between p-3 pb-2">
+          <p class="m-0 fs-6 fw-semibold opacity-75">Total Stocks</p>
+          <span class="border rounded-circle px-2 py-1"><img src="/assets/icons/stocks.svg" alt="Stocks" width="20"></span>
+        </div>
+        <div class="d-flex flex-column align-items-start p-3 pt-1">
+          <h3 class="m-0 p-0 fw-bolder">40,560</h3>
+          <p class="m-0 p-0 fw-lighter">+ 20.10% from last month</p>
+        </div>
+      </mat-card>
+    </div>
   </div>
 </div>
-
